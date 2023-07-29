@@ -1,4 +1,10 @@
-version: '2.4'
+version: "3.8"
+
+networks:
+  sourcegraph:
+        name: sourcegraph
+        external: true
+
 services:
   # Description: This container will migrate the Postgres `frontend`,
   # `codeintel`, and `codeinsights` databases
@@ -808,7 +814,3 @@ volumes:
   sourcegraph-frontend-internal-0:
   symbols-0:
   zoekt-0-shared:
-networks:
-  sourcegraph:
-        name: sourcegraph
-        external: true
