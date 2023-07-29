@@ -810,3 +810,5 @@ volumes:
   zoekt-0-shared:
 networks:
   sourcegraph:
+        name: sourcegraph
+        external: true
