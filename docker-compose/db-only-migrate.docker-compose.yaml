@@ -50,3 +50,5 @@ volumes:
   codeintel-db:
 networks:
   sourcegraph:
+      name: sourcegraph
+      external: true
