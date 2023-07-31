@@ -23,7 +23,7 @@ docker run --detach \
     --name=caddy \
     --network=sourcegraph \
     --restart=always \
-    --cpus="4" \
+    --cpus="2" \
     --memory=4g \
     -e XDG_DATA_HOME="/caddy-storage/data" \
     -e XDG_CONFIG_HOME="/caddy-storage/config" \
