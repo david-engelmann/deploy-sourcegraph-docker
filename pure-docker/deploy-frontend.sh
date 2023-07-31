@@ -16,7 +16,7 @@ docker run --detach \
     --name=sourcegraph-frontend-$1 \
     --network=sourcegraph \
     --restart=always \
-    --cpus=4 \
+    --cpus=2 \
     --memory=8g \
     --health-cmd="wget -q 'http://127.0.0.1:3080/healthz' -O /dev/null || exit 1" \
     --health-interval=5s \
@@ -24,7 +24,7 @@ docker run --detach \
     --health-retries=5 \
     --health-start-period=300s \
     -e DEPLOY_TYPE=pure-docker \
-    -e GOMAXPROCS=12 \
+    -e GOMAXPROCS=2 \
     -e 'OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4317' \
     -e PGHOST=pgsql \
     -e CODEINTEL_PGHOST=codeintel-db \

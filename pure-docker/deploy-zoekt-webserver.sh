@@ -17,9 +17,9 @@ docker run --detach \
     --hostname=zoekt-webserver-$1 \
     --network=sourcegraph \
     --restart=always \
-    --cpus=16 \
+    --cpus=2 \
     --memory=100g \
-    -e GOMAXPROCS=16 \
+    -e GOMAXPROCS=2 \
     -e HOSTNAME=zoekt-webserver-$1:6070 \
     -e 'OPENTELEMETRY_DISABLED=false' \
     -e 'OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4317' \

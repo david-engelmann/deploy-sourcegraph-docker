@@ -15,7 +15,7 @@ docker run --detach \
     --name=codeintel-db \
     --network=sourcegraph \
     --restart=always \
-    --cpus=4 \
+    --cpus=2 \
     --memory=2g \
     -e PGDATA=/var/lib/postgresql/data/pgdata \
     -v $VOLUME:/var/lib/postgresql/data/ \

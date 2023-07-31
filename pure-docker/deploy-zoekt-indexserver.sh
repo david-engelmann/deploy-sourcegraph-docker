@@ -23,9 +23,9 @@ docker run --detach \
     --hostname=zoekt-indexserver-$1 \
     --network=sourcegraph \
     --restart=always \
-    --cpus=8 \
+    --cpus=2 \
     --memory=16g \
-    -e GOMAXPROCS=8 \
+    -e GOMAXPROCS=2 \
     -e HOSTNAME=zoekt-webserver-$1:6070 \
     -e SRC_FRONTEND_INTERNAL=http://sourcegraph-frontend-internal:3090 \
     -e 'OPENTELEMETRY_DISABLED=false' \

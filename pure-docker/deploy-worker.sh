@@ -16,7 +16,7 @@ docker run --detach \
     --name=worker \
     --network=sourcegraph \
     --restart=always \
-    --cpus=4 \
+    --cpus=1 \
     --memory=4g \
     -e GOMAXPROCS=1 \
     -e SRC_FRONTEND_INTERNAL=sourcegraph-frontend-internal:3090 \

@@ -16,10 +16,10 @@ docker run --detach \
     --name=gitserver-$1 \
     --network=sourcegraph \
     --restart=always \
-    --cpus=4 \
+    --cpus=2 \
     --memory=8g \
     --hostname=gitserver-$1 \
-    -e GOMAXPROCS=4 \
+    -e GOMAXPROCS=2 \
     -e SRC_FRONTEND_INTERNAL=sourcegraph-frontend-internal:3090 \
     -e 'OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4317' \
     -e 'GITHUB_BASE_URL=http://github-proxy:3180' \

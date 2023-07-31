@@ -13,7 +13,7 @@ docker run --detach \
     --name=syntect-server \
     --network=sourcegraph \
     --restart=always \
-    --cpus=4 \
+    --cpus=2 \
     --memory=6g \
     index.docker.io/sourcegraph/syntax-highlighter:5.1.5@sha256:ac6192fea85d851037af7a22940510386fde88b3ff0c54706cbd99c39e568abe
 

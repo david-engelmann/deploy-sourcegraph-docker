@@ -16,7 +16,7 @@ docker run --detach \
     --name=codeinsights-db \
     --network=sourcegraph \
     --restart=always \
-    --cpus=4 \
+    --cpus=2 \
     --memory=2g \
     -e POSTGRES_DB=postgres \
     -e POSTGRES_PASSWORD=password \

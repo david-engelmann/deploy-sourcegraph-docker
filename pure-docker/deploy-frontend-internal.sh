@@ -16,7 +16,7 @@ docker run --detach \
     --name=sourcegraph-frontend-internal \
     --network=sourcegraph \
     --restart=always \
-    --cpus=4 \
+    --cpus=2 \
     --memory=8g \
     --health-cmd="wget -q 'http://127.0.0.1:3080/healthz' -O /dev/null || exit 1" \
     --health-interval=5s \
@@ -24,7 +24,7 @@ docker run --detach \
     --health-retries=3 \
     --health-start-period=300s \
     -e DEPLOY_TYPE=pure-docker \
-    -e GOMAXPROCS=4 \
+    -e GOMAXPROCS=2 \
     -e PGHOST=pgsql \
     -e CODEINTEL_PGHOST=codeintel-db \
     -e CODEINSIGHTS_PGDATASOURCE=postgres://postgres:password@codeinsights-db:5432/postgres \
