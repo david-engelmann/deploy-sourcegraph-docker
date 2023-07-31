@@ -1,4 +1,4 @@
-version: '2.4'
+version: '3.8'
 services:
   # Description: Jaeger all-in-one instance
   # (https://www.jaegertracing.io/docs/1.17/getting-started/#all-in-one) for distributed tracing.
