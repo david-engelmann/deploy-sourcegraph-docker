@@ -73,6 +73,18 @@ services:
   #
   # If none of these built-in configurations suit your needs, then you can create your own Caddyfile, see:
   # https://caddyserver.com/docs/caddyfile
+  #
+  caddy_perms:
+    container_name: caddy_perms
+    image: ubuntu
+    user: root
+    group_add:
+      - '${GROUP_ID}'
+    volumes:
+      - '$HOME/nvim_base/deploy-sourcegraph-docker/caddy/builtins/fuck.Caddyfile:/tmp/change-ownership'
+    command:
+      - chown -R ${USER_ID}:${GROUP_ID} /tmp/change-ownership
+
   caddy:
     container_name: caddy
     image: 'index.docker.io/caddy:2.5.2-alpine@sha256:cfa7d94aa1f0c68a167b147a8573711283df2cd6fc285d220387f20206ff4874'
@@ -118,6 +130,9 @@ services:
     networks:
       - sourcegraph
     restart: always
+    depends_on:
+        caddy_perms:
+            condition: service_completed_successfully
 
   # Description: Serves the frontend of Sourcegraph via HTTP(S).
   #
