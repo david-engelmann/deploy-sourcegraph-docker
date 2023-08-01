@@ -36,6 +36,6 @@ docker run --detach \
     -p 0.0.0.0:80:80 \
     -p 0.0.0.0:443:443 \
     -v $VOLUME:/caddy-storage \
-    --mount type=bind,source=/home/david-engelmann/nvim_base/deploy-sourcegraph-docker/caddy/builtins/http.Caddyfile, target=/etc/caddy/Caddyfile \
+    --mount type=bind,source=$HOME/nvim_base/deploy-sourcegraph-docker/caddy/builtins/fuck.Caddyfile, target=/etc/caddy/Caddyfile \
     index.docker.io/caddy:2.5.2-alpine@sha256:cfa7d94aa1f0c68a167b147a8573711283df2cd6fc285d220387f20206ff4874
 
