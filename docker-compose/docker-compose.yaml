@@ -95,7 +95,7 @@ services:
       # the configuration files below must be updated to include trusted_proxies
       #
       # Comment out the following line when using HTTPS with either Let's Encrypt or custom certificates
-      - '../caddy/builtins/http.Caddyfile:/etc/caddy/Caddyfile'
+      - '/home/david-engelmann/nvim/deploy-sourcegraph-docker/caddy/builtins/http.Caddyfile:/etc/caddy/Caddyfile'
       #
       # Uncomment the following line when using HTTPS with Let's Encrypt's staging environment
       # - '../caddy/builtins/https.lets-encrypt-staging.Caddyfile:/etc/caddy/Caddyfile'
