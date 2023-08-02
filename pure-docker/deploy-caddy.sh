@@ -16,12 +16,6 @@ set -e
   #
   # If none of these built-in configurations suit your needs, then you can create your own Caddyfile, see:
   # https://caddyserver.com/docs/caddyfile
-echo "WHO THE ARE YOU"
-whoami
-echo "WHERE THE AM I"
-pwd
-echo "WHAT THE I GOT"
-ls -la
 VOLUME="$HOME/sourcegraph-docker/caddy-storage"
 ./ensure-volume.sh $VOLUME 100
 docker run --detach \
@@ -37,6 +31,6 @@ docker run --detach \
     -p 0.0.0.0:80:80 \
     -p 0.0.0.0:443:443 \
     -v $VOLUME:/caddy-storage \
-    --mount type=bind,source=$HOME/nvim_base/deploy-sourcegraph-docker/caddy/builtins, target=/etc/caddy \
+    --mount type=bind,source=caddy/builtins/http.Caddyfile, target=/etc/caddy/Caddyfile \
     index.docker.io/caddy:2.7-alpine@sha256:57942bf7e71d78bc866cbc6c45f0563dbbea73efedac5e731b4b2cffa75e45b4
 
