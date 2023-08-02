@@ -81,7 +81,7 @@ services:
 #    group_add:
 #      - '${GROUP_ID}'
 #    volumes:
-#      - '${HOME}/nvim_base/deploy-sourcegraph-docker/caddy/builtins/fuck.Caddyfile:/etc/caddy/Caddyfile'
+#      - '${HOME}/nvim_base/deploy-sourcegraph-docker/caddy/builtins:/etc/caddy'
 #    command:
 #        - chown root:root /etc/caddy/Caddyfile && chmod a+x /etc/caddy/Caddyfile
 
@@ -107,7 +107,7 @@ services:
       # the configuration files below must be updated to include trusted_proxies
       #
       # Comment out the following line when using HTTPS with either Let's Encrypt or custom certificates
-      - '${HOME}/nvim_base/deploy-sourcegraph-docker/caddy/builtins/fuck.Caddyfile:/etc/caddy/Caddyfile'
+      - '${HOME}/nvim_base/deploy-sourcegraph-docker/caddy/builtins:/etc/caddy'
       #
       # Uncomment the following line when using HTTPS with Let's Encrypt's staging environment
       # - '../caddy/builtins/https.lets-encrypt-staging.Caddyfile:/etc/caddy/Caddyfile'
