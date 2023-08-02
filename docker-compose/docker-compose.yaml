@@ -74,16 +74,16 @@ services:
   # If none of these built-in configurations suit your needs, then you can create your own Caddyfile, see:
   # https://caddyserver.com/docs/caddyfile
   #
-  caddy_perms:
-    container_name: caddy_perms
-    image: ubuntu
-    user: root
-    group_add:
-      - '${GROUP_ID}'
-    volumes:
-      - '${HOME}/nvim_base/deploy-sourcegraph-docker/caddy/builtins/fuck.Caddyfile:/etc/caddy/Caddyfile'
-    command:
-        - chown root:root /etc/caddy/Caddyfile && chmod a+x /etc/caddy/Caddyfile
+#  caddy_perms:
+#    container_name: caddy_perms
+#    image: ubuntu
+#    user: root
+#    group_add:
+#      - '${GROUP_ID}'
+#    volumes:
+#      - '${HOME}/nvim_base/deploy-sourcegraph-docker/caddy/builtins/fuck.Caddyfile:/etc/caddy/Caddyfile'
+#    command:
+#        - chown root:root /etc/caddy/Caddyfile && chmod a+x /etc/caddy/Caddyfile
 
   caddy:
     container_name: caddy
@@ -129,9 +129,9 @@ services:
     networks:
       - sourcegraph
     restart: always
-    depends_on:
-        caddy_perms:
-            condition: service_completed_successfully
+#    depends_on:
+#        caddy_perms:
+#            condition: service_completed_successfully
 
   # Description: Serves the frontend of Sourcegraph via HTTP(S).
   #
