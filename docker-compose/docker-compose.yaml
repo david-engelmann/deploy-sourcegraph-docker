@@ -81,14 +81,13 @@ services:
     group_add:
       - '${GROUP_ID}'
     volumes:
-      - '${HOME}/nvim_base/deploy-sourcegraph-docker/caddy/builtins/fuck.Caddyfile:/tmp/change-ownership'
+      - '${HOME}/nvim_base/deploy-sourcegraph-docker/caddy/builtins/fuck.Caddyfile:/etc/caddy/Caddyfile'
     command:
-      - chown -R ${USER_ID}:${GROUP_ID} /tmp/change-ownership
+      - chown -R ${USER_ID}:${GROUP_ID} /etc/caddy/Caddyfile
 
   caddy:
     container_name: caddy
     image: 'index.docker.io/caddy:2.5.2-alpine@sha256:cfa7d94aa1f0c68a167b147a8573711283df2cd6fc285d220387f20206ff4874'
-    
     cpus: 2
     mem_limit: '4g'
     environment:
