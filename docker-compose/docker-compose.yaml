@@ -83,7 +83,7 @@ services:
     volumes:
       - '${HOME}/nvim_base/deploy-sourcegraph-docker/caddy/builtins/fuck.Caddyfile:/etc/caddy/Caddyfile'
     command:
-      - chown -R ${USER_ID}:${GROUP_ID} /etc/caddy/Caddyfile
+        - chown root:root /etc/caddy/Caddyfile && chmod a+x /etc/caddy/Caddyfile
 
   caddy:
     container_name: caddy
