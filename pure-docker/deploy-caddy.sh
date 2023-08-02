@@ -25,6 +25,7 @@ ls -la
 VOLUME="$HOME/sourcegraph-docker/caddy-storage"
 ./ensure-volume.sh $VOLUME 100
 docker run --detach \
+    --privileged \
     --name=caddy \
     --network=sourcegraph \
     --restart=always \
