@@ -88,7 +88,7 @@ services:
   caddy:
     container_name: caddy
     image: 'index.docker.io/caddy:2.7.3-alpine@sha256:f9824933254e3e43e0508670ee9bdcde704621017e95119a05317383b1878f4f'
-    cpus: 4
+    cpus: 2
     mem_limit: '4g'
     privileged: true
     environment:
