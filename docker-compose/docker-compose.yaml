@@ -74,16 +74,6 @@ services:
   # If none of these built-in configurations suit your needs, then you can create your own Caddyfile, see:
   # https://caddyserver.com/docs/caddyfile
   #
-#  caddy_perms:
-#    container_name: caddy_perms
-#    image: ubuntu
-#    user: root
-#    group_add:
-#      - '${GROUP_ID}'
-#    volumes:
-#      - '${HOME}/nvim_base/deploy-sourcegraph-docker/caddy/builtins:/etc/caddy'
-#    command:
-#        - chown root:root /etc/caddy/Caddyfile && chmod a+x /etc/caddy/Caddyfile
 
   caddy:
     container_name: caddy
@@ -98,7 +88,6 @@ services:
       - 'XDG_DATA_HOME=/caddy-storage/data'
       - 'XDG_CONFIG_HOME=/caddy-storage/config'
       - 'SRC_FRONTEND_ADDRESSES=sourcegraph-frontend-0:3080'
-      - 'CADDYFILE_PATH=../caddy/builtins/http.Caddyfile'
       # Uncomment & update this line when using Let's Encrypt or custom HTTPS certificates:
       # - 'SRC_SITE_ADDRESS=sourcegraph.example.com'
       #
@@ -134,9 +123,6 @@ services:
     networks:
       - sourcegraph
     restart: always
-#    depends_on:
-#        caddy_perms:
-#            condition: service_completed_successfully
 
   # Description: Serves the frontend of Sourcegraph via HTTP(S).
   #

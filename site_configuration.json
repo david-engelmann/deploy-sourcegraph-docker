@@ -1,0 +1,25 @@
+{
+  "auth.providers": [
+    {
+      "type": "builtin"
+    }
+  ],
+  "externalURL": "https://localhost",
+  "cody.enabled": true,
+  "cody.restrictUsersFeatureFlag": false,
+  "embeddings": {
+    "provider": "openai",
+    "enabled": true,
+    "dimensions": 1536,
+    "model": "text-embedding-ada-002",
+    "accessToken": "REDACTED",
+    "url": "https://api.openai.com/v1/embeddings"
+  },
+  "completions": {
+    "provider": "openai",
+    "chatModel": "gpt-4",
+    "fastChatModel": "gpt-35-turbo",
+    "completionModel": "gpt-35-turbo",
+    "accessToken": "REDACTED"
+  }
+}

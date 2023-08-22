@@ -1,2 +1,15 @@
 FROM caddy:2.7.3-alpine
-COPY ./builtins/http.Caddyfile /etc/caddy/Caddyfile
+
+ARG XDG_DATA_HOME=/caddy-storage/data
+ENV XDG_DATA_HOME $XDG_DATA_HOME
+
+ARG XDG_CONFIG_HOME=/caddy-storage/config
+ENV XDG_CONFIG_HOME $XDG_CONFIG_HOME
+
+ARG SRC_FRONTEND_ADDRESSES=sourcegraph-frontend-0:3080
+ENV SRC_FRONTEND_ADDRESSES $SRC_FRONTEND_ADDRESSES
+
+COPY --chmod=0755 ./builtins/http.Caddyfile /etc/caddy/Caddyfile
+COPY . .
+
+VOLUME caddy-storage
